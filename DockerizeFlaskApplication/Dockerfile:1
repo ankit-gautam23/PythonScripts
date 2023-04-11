@@ -1,0 +1,11 @@
+#Script to run docker container on basis of dockerfile
+
+docker build -t appname .
+
+# run a new docker container named cashman
+docker run --name appname \
+    -d -p 5000:5000 \
+    appname
+
+# fetch incomes from the dockerized instance
+curl http://localhost:5000/
